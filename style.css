@@ -1,0 +1,62 @@
+:root{
+    --cell-size: 3rem;
+    --cell-spacing: 0.5rem;
+    --light-grey: rgb(245 245 245);
+    --medium-grey: rgb(230 230 230);
+    --hover-grey: rgb(210 210 210);
+    --color-allowed-move: rgb(210 210 255);
+    --color-allowed-move-hover: rgb(200 200 255);
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--cell-spacing);
+    padding: var(--cell-spacing);
+    background-color: var(--light-grey);
+    border-radius: 0.2rem;
+    float: left;
+}
+
+.board:hover {
+    background-color: var(--medium-grey);
+}
+
+.board.next {
+    background-color: var(--color-allowed-move);
+}
+
+.board.next:hover {
+    background-color: var(--color-allowed-move-hover);
+}
+
+.board.x {
+    background-color: rgb(255 150 150);
+}
+
+.board.o {
+    background-color: rgb(150 255 150);
+}
+
+.cell {
+    height: var(--cell-size);
+    width: var(--cell-size);
+    border: black solid 2px;
+    border-radius: 0.2rem;
+    background-color: var(--medium-grey);
+    font-size: 2rem;
+    text-align: center;
+    line-height: var(--cell-size);
+}
+
+.cell.empty:hover {
+    background-color: var(--hover-grey);
+}
+
+.cell.x {
+    background-color: rgb(255 100 100);
+}
+
+.cell.o {
+    background-color: rgb(100 255 100);
+}
