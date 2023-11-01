@@ -1,62 +1,59 @@
 :root{
-    --cell-size: 3rem;
-    --cell-spacing: 0.5rem;
-    --light-grey: rgb(245 245 245);
-    --medium-grey: rgb(230 230 230);
-    --hover-grey: rgb(210 210 210);
-    --color-allowed-move: rgb(210 210 255);
-    --color-allowed-move-hover: rgb(200 200 255);
+    --cell-size: 2rem;
+    --cell-spacing: 0.1rem;
+    --border-radius: 0.2rem;
+    --border-style: rgb(200 200 200) solid 1px;
+    --color-board: rgb(245 245 245);
+    --color-hover: rgb(230 230 230);
+    --color-X: rgb(0 140 0);
+    --color-bg-X: rgb(145 255 145);
+    --color-O: rgb(0 0 160);
+    --color-bg-O: rgb(150 150 255);
+    /* --color-danger: rgb(255 80 80); */
+}
+
+.game {
+    display: inline flex;
+    flex-flow: column;
+    background-color: var(--color-board);
+    border: var(--border-style);
+    border-radius: var(--border-radius);
+}
+
+.state {
+    text-align: center;
+    margin: var(--cell-spacing);
 }
 
 .board {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: var(--cell-spacing);
-    padding: var(--cell-spacing);
-    background-color: var(--light-grey);
-    border-radius: 0.2rem;
-    float: left;
-}
-
-.board:hover {
-    background-color: var(--medium-grey);
-}
-
-.board.next {
-    background-color: var(--color-allowed-move);
-}
-
-.board.next:hover {
-    background-color: var(--color-allowed-move-hover);
-}
-
-.board.x {
-    background-color: rgb(255 150 150);
-}
-
-.board.o {
-    background-color: rgb(150 255 150);
+    margin: var(--cell-spacing);
 }
 
 .cell {
-    height: var(--cell-size);
+    aspect-ratio: 1 / 1;
     width: var(--cell-size);
-    border: black solid 2px;
-    border-radius: 0.2rem;
-    background-color: var(--medium-grey);
-    font-size: 2rem;
-    text-align: center;
     line-height: var(--cell-size);
+    text-align: center;
+    background-color: var(--color-board);
+    border: var(--border-style);
+    border-radius: var(--border-radius);
 }
 
-.cell.empty:hover {
-    background-color: var(--hover-grey);
+.cell:hover {
+    background-color: var(--color-hover);
 }
 
-.cell.x {
-    background-color: rgb(255 100 100);
+.cell.side-X {
+    background-color: var(--color-bg-X);
+    color: var(--color-X);
+    border-color: var(--color-X);
 }
 
-.cell.o {
-    background-color: rgb(100 255 100);
+.cell.side-O {
+    background-color: var(--color-bg-O);
+    color: var(--color-O);
+    border-color: var(--color-O);
 }
