@@ -7,4 +7,4 @@ edition = "2021"
 
 [dependencies]
 tic-tac-toe = { git = "https://github.com/hkBst/tic-tac-toe" }
-leptos = { version = "0.6.10", features = ["csr"] }
+leptos = { version = "0.7", features = ["csr"] }

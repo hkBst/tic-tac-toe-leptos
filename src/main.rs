@@ -1,4 +1,4 @@
-use leptos::*;
+use leptos::prelude::*;
 use tic_tac_toe::*;
 
 fn main() {
@@ -7,7 +7,7 @@ fn main() {
 
 #[component]
 fn App() -> impl IntoView {
-    let game = create_rw_signal(Game::new());
+    let game = RwSignal::new(Game::new());
 
     let board = [Hor::Left, Hor::Mid, Hor::Right]
         .into_iter()
